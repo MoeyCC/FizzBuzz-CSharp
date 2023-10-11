@@ -10,26 +10,12 @@ internal class Program
 
         List<string> message = new List<string>();
 
-        //**************************************************************************
+        #nullable disable
 
-        /* message.Add("Fezz");
-        message.Add("Ping");
-        message.Add("Fuzz");
-        message.Add("Song");
+        Console.WriteLine("Please enter a maximum number: ");
+        int maxNumber = int.Parse(Console.ReadLine());
 
-        int result = IsFoundLetter(message, "B");
-
-        if(result != -1){
-            Console.WriteLine("Letter B found in position {0}", result);
-        } else {
-            Console.WriteLine("Letter B not found!");
-        }; */
-        
-        //************************************************************************
-
-        
-
-        for (int i = 1; i < 301; i++)
+        for (int i = 1; i <= maxNumber; i++)
         {
             message.Clear();
             if (IsDivisibleBy(i, 3)) message.Add("Fizz");
