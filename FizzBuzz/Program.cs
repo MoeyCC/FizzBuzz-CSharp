@@ -8,7 +8,7 @@ internal class Program
         Console.WriteLine("====================");
         Console.WriteLine();
 
-        List<string> message = new List<string>();
+        List<string> result = new List<string>();
 
         #nullable disable
 
@@ -17,39 +17,39 @@ internal class Program
 
         for (int i = 1; i <= maxNumber; i++)
         {
-            message.Clear();
-            if (IsDivisibleBy(i, 3)) message.Add("Fizz");
+            result.Clear();
+            if (IsDivisibleBy(i, 3)) result.Add("Fizz");
 
-            if (IsDivisibleBy(i, 5)) message.Add("Buzz");
+            if (IsDivisibleBy(i, 5)) result.Add("Buzz");
 
-            if (IsDivisibleBy(i, 7)) message.Add("Bang");
+            if (IsDivisibleBy(i, 7)) result.Add("Bang");
 
             if (IsDivisibleBy(i, 11))
             {
-                message.Clear();
-                message.Add("Bong");
+                result.Clear();
+                result.Add("Bong");
             }
 
             if (IsDivisibleBy(i, 13))
             {
-                if (message.Count > 0)
+                if (result.Count > 0)
                 {
-                    int result = IsFoundLetter(message, "B");
-                    if(result == -1){
-                        message.Add("Fezz");
-                    } else message.Insert(result, "Fezz");
+                    int position = IsFoundLetter(result, "B");
+                    if(position == -1){
+                        result.Add("Fezz");
+                    } else result.Insert(position, "Fezz");
                 }
                 else {
-                    message.Clear();
-                    message.Add("Fezz");
+                    result.Clear();
+                    result.Add("Fezz");
                 }
             }
 
-            if (IsDivisibleBy(i, 17)) message.Reverse();
+            if (IsDivisibleBy(i, 17)) result.Reverse();
 
-            if (message.Count == 0) message.Add(i.ToString());
+            if (result.Count == 0) result.Add(i.ToString());
 
-            Console.WriteLine(string.Join("", message));
+            Console.WriteLine(string.Join("", result));
         }
 
     } 
